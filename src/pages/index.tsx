@@ -17,15 +17,15 @@ export default function Home(){
   const isMismatched = useNetworkMismatch()
 
   // Campos a Serem Personalizados
-    const nameProjet = "BootCamp iBEED"  // Nome do seu Projeto
-    const { contract } = useContract("0xE21964C19fb32f02e474ae83b126B87E6D1C2301") // Endereço da sua Coleção
-    const tokenId = 0 // Token ID que você quer liberar o Mint
+    const nameProjet = "CHMonstro"  // Nome do seu Projeto
+    const { contract } = useContract("0x3922eEe50B2cdcF96B33bBCE48754B521312e673") // Endereço da sua Coleção
+    const tokenId = 1 // Token ID que você quer liberar o Mint
   // -------------------------------
 
   const { data: nft, isLoading, error } = useNFT(contract, `${tokenId}`)
 
   async function totalMinted(){
-    const data = await (await contract)?.call("totalSupply", [0])
+    const data = await (await contract)?.call("totalSupply", [75])
     .then(function(myValue: any){
       const receipt = myValue.toString()
       setMinted(receipt)
